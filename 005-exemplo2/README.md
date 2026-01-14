@@ -1,7 +1,7 @@
 # Exemplo 2: Containers Conversando Entre Si 
 ---
 
-## 📁 Entendendo os Arquivos
+## I. Entendendo os Arquivos
 
 ### **app.py** - A Aplicação Web
 ```python
@@ -145,7 +145,7 @@ meu_banco:
 
 ---
 
-## Reproduzindo exemplo - parte 1
+## II. Reproduzindo exemplo - parte 1
 
 ### **Pré-requisitos**
 - Docker e Docker Compose instalados
@@ -155,7 +155,7 @@ meu_banco:
 ### **Passo 1: Navegue até a pasta**
 
 ```bash
-cd /caminho/para/004-exemplo2/myapp2
+cd /caminho/para/005-exemplo2/myapp2
 ```
 
 ### **Passo 2: Inicie os serviços com Docker Compose**
@@ -269,8 +269,8 @@ docker compose logs web
 
 Você verá algo como:
 ```
-web_1 | ConnectionError: Error 111 connecting to meu_banco:6379. Connection refused.
-web_1 | Error: Connection pool is exhausted
+web_1 | ConnectionError: Error 111 connecting to meu_banco:6379. Name or service not known.
+web_1 | "GET / HTTP/1.1" 500 -
 ```
 
 #### **4. Agora vem a Mágica: Reinicie o Redis**

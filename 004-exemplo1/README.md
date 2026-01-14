@@ -1,8 +1,8 @@
-# Exemplo 1: Sua Primeira Aplicação com Docker 🚀
+# Exemplo 1: Sua Primeira Aplicação com Docker 
 
 > Este exemplo mostra como empacotar uma **aplicação web simples** dentro de um container Docker, tornando-a portável e fácil de executar em qualquer computador.
 
-## 📚 Entendendo o Conceito
+## I. Entendendo o Conceito
 
 Imagine que você tem uma receita de bolo (o código da sua aplicação). Quando você quer servir esse bolo:
 
@@ -12,7 +12,7 @@ Imagine que você tem uma receita de bolo (o código da sua aplicação). Quando
 
 ---
 
-## 📁 Estrutura do Projeto
+## II. Estrutura do Projeto
 
 Antes de começar, conheça os arquivos que compõem este exemplo:
 
@@ -122,11 +122,10 @@ volumes:
 
 ---
 
-## 🚀 Passo a Passo - Reproduza Agora!
+## III. Passo a Passo - Reproduza Agora!
 
 ### **Pré-requisitos**
-- Docker instalado no seu computador
-- Terminal/Prompt de Comando aberto
+
 - Estar dentro da pasta `003-exemplo1/myapp`
 
 ### **Passo 1: Abra o Terminal**
@@ -134,7 +133,7 @@ volumes:
 Abra o terminal/prompt de comando no seu computador e navegue até a pasta do projeto:
 
 ```bash
-cd /caminho/para/003-exemplo1/myapp
+cd /caminho/para/004-exemplo1/myapp
 ```
 
 > **Dica**: Se você está no Windows, use `cd C:\caminho\para\003-exemplo1\myapp`
@@ -144,12 +143,12 @@ cd /caminho/para/003-exemplo1/myapp
 Agora vamos "montar a cozinha" (criar a imagem):
 
 ```bash
-docker build -t minha-app:v1 .
+docker build -t myapp .
 ```
 
 **O que está acontecendo:**
 - `docker build`: Constrói uma imagem Docker baseada no Dockerfile
-- `-t minha-app:v1`: Nomeia a imagem como "minha-app" com versão "v1"
+- `-t myapp`: Nomeia a imagem como "minha-app" com versão "v1"
 - `.`: Procura pelo Dockerfile na pasta atual
 
 **Você verá algo como:**
@@ -160,7 +159,7 @@ docker build -t minha-app:v1 .
 [4/5] RUN pip install -r requirements.txt
 [5/5] COPY . .
 Successfully built abc123def456
-Successfully tagged minha-app:v1
+Successfully tagged myapp:latest
 ```
 
 ### **Passo 3: Execute o Container**
@@ -168,13 +167,13 @@ Successfully tagged minha-app:v1
 Agora vamos "fatiar o bolo" (criar um container):
 
 ```bash
-docker run -p 5001:5000 minha-app:v1
+docker run -p 5001:5000 myapp
 ```
 
 **O que está acontecendo:**
 - `docker run`: Cria e inicia um novo container
 - `-p 5001:5000`: Mapeia a porta 5000 do container para 5001 do seu computador
-- `minha-app:v1`: Usa a imagem que construímos no passo anterior
+- `myapp`: Usa a imagem que construímos no passo anterior
 
 **Você verá algo como:**
 ```
@@ -216,7 +215,7 @@ Keyboard interrupt received, quitting.
 
 ---
 
-## 🎯 Usando Docker Compose (Mais Fácil!)
+## IV. Usando Docker Compose (Mais Fácil!)
 
 Em vez de rodar o `docker build` e depois `docker run` separadamente, o Docker Compose faz tudo de uma vez!
 
@@ -229,7 +228,7 @@ cd /caminho/para/003-exemplo1/myapp
 ### **Passo 2: Inicie os serviços com Compose**
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 **O que está acontecendo:**
@@ -263,12 +262,6 @@ No terminal, pressione:
 CTRL + C
 ```
 
-Você verá:
-```
-Killing 003-exemplo1_web_1  ... done
-Killing 003-exemplo1_db_1   ... done
-```
-
 Ambos os containers foram parados graciosamente.
 
 ### **Passo 5 (Opcional): Limpe tudo**
@@ -276,69 +269,15 @@ Ambos os containers foram parados graciosamente.
 Para remover os containers e a rede:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 Você verá:
 ```
-Removing 003-exemplo1_web_1 ... done
-Removing 003-exemplo1_db_1  ... done
-Removing network 003-exemplo1_default
+ ✔ Container myapp-web-1  Removed 
+ ✔ Container myapp-db-1   Removed
+ ✔ Network myapp_default  Removed
 ```
-
----
-
-## 🔍 Explorando Mais
-
-### **Ver containers rodando**
-
-```bash
-docker ps
-```
-
-Mostra algo como:
-```
-CONTAINER ID   IMAGE         COMMAND              PORTS                  NAMES
-abc123def456   minha-app:v1  "python app.py"      0.0.0.0:5001->5000/tcp my-container
-```
-
-### **Ver todos os containers (inclusive os parados)**
-
-```bash
-docker ps -a
-```
-
-### **Ver as imagens disponíveis**
-
-```bash
-docker images
-```
-
-Mostra algo como:
-```
-REPOSITORY     TAG    IMAGE ID       CREATED        SIZE
-minha-app      v1     abc123def456   2 minutes ago   190MB
-python         3.10   xyz789abc123   2 weeks ago     900MB
-```
-
-### **Ver os logs de um container**
-
-```bash
-docker logs <CONTAINER_ID>
-```
-
-Substitua `<CONTAINER_ID>` pelo ID do seu container. Mostra todos os logs históricos.
-
-### **Entrar dentro de um container rodando**
-
-```bash
-docker exec -it <CONTAINER_ID> /bin/bash
-```
-
-Isso abre um terminal dentro do container! Você pode:
-- Explorar os arquivos: `ls -la`
-- Ver as dependências: `pip list`
-- Sair com: `exit`
 
 ---
 
@@ -347,5 +286,5 @@ Isso abre um terminal dentro do container! Você pode:
 Outro processo está usando a porta 5001. Opções:
 ```bash
 # Use outra porta
-docker run -p 5002:5000 minha-app:v1
+docker run -p 5002:5000 myapp
 ```

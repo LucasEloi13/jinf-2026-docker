@@ -13,7 +13,7 @@
 
 ---
 
-## A analogia do bolo 
+## I. A analogia do bolo 
 
 Vamos usar essa analogia durante **todo o material**:
 
@@ -28,15 +28,15 @@ Vamos usar essa analogia durante **todo o material**:
 
 ---
 
-## O comando `docker run hello-world`
+## II. Excutando comando Hello World em Docker
+
+Com o docker aberto, execute em seu terminal: 
 
 ```bash
 docker run hello-world
 ```
 
----
-
-## O que acontece passo a passo
+### O que acontece passo a passo
 
 Quando você executa:
 
@@ -60,7 +60,7 @@ Tudo isso acontece em segundos.
 
 ---
 
-## Analisando a saída do terminal linha por linha
+### Analisando a saída do terminal linha por linha
 
 ```bash
 Unable to find image 'hello-world:latest' locally
@@ -77,7 +77,7 @@ Ou seja:
 
 --- 
 
-## Execução do container
+### Execução do container
 
 ```bash
 Hello from Docker!
