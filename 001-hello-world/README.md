@@ -13,7 +13,7 @@
 
 ---
 
-## A analogia do bolo 🍰
+## A analogia do bolo 
 
 Vamos usar essa analogia durante **todo o material**:
 
@@ -25,11 +25,6 @@ Vamos usar essa analogia durante **todo o material**:
 | Registry (Docker Hub) | Doceria cheia de bolos |
 | Docker Client | Você fazendo o pedido |
 | Docker Daemon | A cozinha que prepara e serve |
-
-> 📌 Importante:  
-> **Você nunca come a receita**,  
-> **não come o bolo inteiro congelado**,  
-> **você come uma fatia servida** → o **container**.
 
 ---
 
@@ -60,6 +55,8 @@ O Docker faz exatamente isso:
 7. Executa o container
 
 Tudo isso acontece em segundos.
+
+![](./img/docker-architecture.png)
 
 ---
 
@@ -94,3 +91,5 @@ Tecnicamente:
 - Executou um pequeno programa dentro dele
 - Esse programa imprimiu essa mensagem
 - O container encerrou automaticamente
+
+---
