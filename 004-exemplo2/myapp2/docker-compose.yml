@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  # Nosso app Flask
+  web:
+    build: .
+    ports:
+      - "5001:5000" # Mapeia a porta 5001 do seu PC para a 5000 do container
+    volumes:
+      - .:/app    # Permite que você mude o código e o container atualize (Hot Reload)
+    depends_on:
+      - meu_banco # Garante que o Redis suba antes do Flask
+
+  # O Banco de Dados Redis
+  meu_banco:
+    image: "redis:alpine" # Imagem oficial super leve do Redis
+    restart: always
