@@ -207,9 +207,13 @@ Keyboard interrupt received, quitting.
 
 ---
 
-## III. Usando Docker Compose (Mais Fácil!)
+## III. Usando Docker Compose
 
 Em vez de rodar o `docker build` e depois `docker run` separadamente, o Docker Compose faz tudo de uma vez!
+
+<!-- incluir imagem 004-exemplo1/img/docker-compose.png -->
+![](./img/docker-compose.png)
+
 
 ### **Passo 1: Certifique-se de estar na pasta correta**
 
