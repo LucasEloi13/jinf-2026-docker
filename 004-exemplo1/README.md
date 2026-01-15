@@ -2,17 +2,9 @@
 
 > Este exemplo mostra como empacotar uma **aplicação web simples** dentro de um container Docker, tornando-a portável e fácil de executar em qualquer computador.
 
-## I. Entendendo o Conceito
-
-Imagine que você tem uma receita de bolo (o código da sua aplicação). Quando você quer servir esse bolo:
-
-1. **Sem Docker**: Você precisa ter a cozinha inteira instalada no seu computador (Python instalado, todas as bibliotecas necessárias, etc). Se o bolo ficar pronto, você o come. Mas se alguém quiser o mesmo bolo, precisa montar outra cozinha!
-
-2. **Com Docker**: Você coloca a receita + a cozinha inteira em uma caixa (imagem). Quando quer comer, abre uma caixa (cria um container). A caixa já tem tudo necessário. Se alguém quer o mesmo bolo, abre outra caixa!
-
 ---
 
-## II. Estrutura do Projeto
+## I. Estrutura do Projeto
 
 Antes de começar, conheça os arquivos que compõem este exemplo:
 
@@ -122,7 +114,7 @@ volumes:
 
 ---
 
-## III. Passo a Passo - Reproduza Agora!
+## II. Passo a Passo - Reproduza Agora!
 
 ### **Pré-requisitos**
 
@@ -215,7 +207,7 @@ Keyboard interrupt received, quitting.
 
 ---
 
-## IV. Usando Docker Compose (Mais Fácil!)
+## III. Usando Docker Compose (Mais Fácil!)
 
 Em vez de rodar o `docker build` e depois `docker run` separadamente, o Docker Compose faz tudo de uma vez!
 
